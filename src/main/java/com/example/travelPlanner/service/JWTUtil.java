@@ -3,6 +3,7 @@ package com.example.travelPlanner.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +46,7 @@ public class JWTUtil {
     }
 
     private SecretKey getSignInKey() {
-        byte[] keyBytes = (SECRET_KEY).getBytes();
+        byte[] keyBytes = SECRET_KEY.getBytes();
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
